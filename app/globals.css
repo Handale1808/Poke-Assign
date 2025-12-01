@@ -1,32 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg-primary: #1a1a1a;
-  --color-bg-card: #262626;
-  --color-accent-purple: #d4a5d3;
-  --color-accent-cyan: #7fb8c4;
+  --colour-bg-primary: #1a1a1a;
+  --colour-bg-card: #262626;
+  --colour-border: #333333;
+  --colour-accent-purple: #d4a5d3;
+  --colour-accent-cyan: #7fb8c4;
+  --colour-text: #e6e6e6;
   
-  --color-pastel-lavender: #f0d9ef;
-  --color-pastel-pink: #fcdce1;
-  --color-pastel-yellow: #ffe6bb;
-  --color-pastel-sage: #e9ecce;
-  --color-pastel-mint: #cde9dc;
-  --color-pastel-blue: #c4dfe5;
+  --colour-pastel-lavender: #f0d9ef;
+  --colour-pastel-pink: #fcdce1;
+  --colour-pastel-yellow: #ffe6bb;
+  --colour-pastel-sage: #e9ecce;
+  --colour-pastel-mint: #cde9dc;
+  --colour-pastel-blue: #c4dfe5;
   
   --font-family-sans: var(--font-geist-sans);
   --font-family-mono: var(--font-geist-mono);
 }
 
 body {
-  background-color: #1a1a1a;
+  background-color: var(--colour-bg-primary);
   color: #e6e6e6;
 }
 
 @utility gradient-text {
-  background: linear-gradient(to right, #d4a5d3, #7fb8c4);
+  background: linear-gradient(to right, var(--colour-accent-purple), var(--colour-accent-cyan));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@utility gradient-purple-cyan {
+  background: linear-gradient(to right, var(--colour-accent-purple), var(--colour-accent-cyan));
 }
 
 @utility glow-purple {

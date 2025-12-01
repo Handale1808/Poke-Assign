@@ -116,9 +116,9 @@ export default function SubmissionForm({ onAnalysisComplete }: SubmissionFormPro
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           placeholder="Describe your vibes, habits, or chaotic tendencies..."
-          className={`w-full min-h-[120px] px-4 py-3 bg-slate-900 border rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-purple-500 text-slate-100 placeholder-slate-500 transition-all ${
+          className={`w-full min-h-[120px] px-4 py-3 bg-[var(--colour-bg-card)] border rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-purple-500 text-[var(--colour-text)] placeholder-[var(--colour-text)] transition-all ${
             isLoading ? 'opacity-50 cursor-not-allowed' : ''
-          } ${error ? 'border-red-500' : 'border-slate-700'}`}
+          } ${error ? 'border-red-500' : 'border-[var(--colour-border)]'}`}
           disabled={isLoading}
           rows={4}
         />
@@ -129,7 +129,7 @@ export default function SubmissionForm({ onAnalysisComplete }: SubmissionFormPro
                 ? 'text-red-400'
                 : charCount > 900
                 ? 'text-yellow-400'
-                : 'text-slate-500'
+                : 'text-[var(--colour-text)]'
             }`}
           >
             {charCount} / 1000
@@ -144,7 +144,7 @@ export default function SubmissionForm({ onAnalysisComplete }: SubmissionFormPro
       )}
 
       <div>
-        <p className="text-sm text-slate-400 mb-2">Need inspiration? Try an example:</p>
+        <p className="text-sm text-[var(--colour-text)] mb-2">Need inspiration? Try an example:</p>
         <div className="flex flex-col sm:flex-row gap-2">
           {EXAMPLE_TEXTS.map((example, index) => (
             <button
@@ -152,7 +152,7 @@ export default function SubmissionForm({ onAnalysisComplete }: SubmissionFormPro
               type="button"
               onClick={() => handleExampleClick(example)}
               disabled={isLoading}
-              className="flex-1 px-3 py-2 text-sm bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-left"
+              className="flex-1 px-3 py-2 text-sm bg-[var(--colour-bg-card)] hover:bg-slate-700 border border-[var(--colour-border)] rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-left"
             >
               Example {index + 1}
             </button>
@@ -163,7 +163,7 @@ export default function SubmissionForm({ onAnalysisComplete }: SubmissionFormPro
       <button
         type="submit"
         disabled={isLoading || charCount < 10 || charCount > 1000}
-        className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 hover:from-purple-500 hover:to-cyan-500 disabled:from-slate-700 disabled:to-slate-700 disabled:cursor-not-allowed rounded-lg font-bold text-lg transition-all hover:scale-105 active:scale-98 disabled:scale-100 disabled:opacity-50 flex items-center justify-center gap-3"
+        className="w-full px-8 py-4 gradient-purple-cyan hover:from-purple-500 hover:to-cyan-500 disabled:from-slate-700 disabled:to-slate-700 disabled:cursor-not-allowed rounded-lg font-bold text-lg transition-all hover:scale-105 active:scale-98 disabled:scale-100 disabled:opacity-50 flex items-center justify-center gap-3"
       >
         {isLoading ? (
           <>
@@ -171,7 +171,7 @@ export default function SubmissionForm({ onAnalysisComplete }: SubmissionFormPro
             <span>SUMMONING...</span>
           </>
         ) : (
-          <span>SUMMON MY GREMLIN</span>
+          <span className="text-black">SUMMON MY GREMLIN</span>
         )}
       </button>
     </form>

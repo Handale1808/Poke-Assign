@@ -1,6 +1,8 @@
 import dbConnect from '@/lib/mongodb';
 import { Submission, Analysis, Pokemon, Synonym, Log } from '@/lib/models';
 
+export const dynamic = 'force-dynamic';
+
 export default async function DataPage() {
   await dbConnect();
   

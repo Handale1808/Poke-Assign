@@ -152,7 +152,7 @@ export default function SubmissionForm({ onAnalysisComplete }: SubmissionFormPro
               type="button"
               onClick={() => handleExampleClick(example)}
               disabled={isLoading}
-              className="flex-1 px-3 py-2 text-sm bg-[var(--colour-bg-card)] hover:bg-slate-700 border border-[var(--colour-border)] rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-left"
+              className="flex-1 px-3 py-2 text-sm bg-[var(--colour-bg-card)] hover:bg-[var(--colour-hover)] border border-[var(--colour-border)] rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-left"
             >
               Example {index + 1}
             </button>

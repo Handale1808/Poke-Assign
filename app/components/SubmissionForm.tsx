@@ -116,7 +116,7 @@ export default function SubmissionForm({ onAnalysisComplete }: SubmissionFormPro
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           placeholder="Describe your vibes, habits, or chaotic tendencies..."
-          className={`w-full min-h-[120px] px-4 py-3 bg-[var(--colour-bg-card)] border rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-purple-500 text-[var(--colour-text)] placeholder-[var(--colour-text)] transition-all ${
+          className={`w-full min-h-[120px] px-4 py-3 bg-[var(--colour-bg-card)] border rounded-lg resize-y focus:outline-none focus:ring-2 focus:ring-[var(--colour-pastel-lavender)] text-[var(--colour-text)] placeholder-[var(--colour-text)] transition-all ${
             isLoading ? 'opacity-50 cursor-not-allowed' : ''
           } ${error ? 'border-red-500' : 'border-[var(--colour-border)]'}`}
           disabled={isLoading}

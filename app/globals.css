@@ -1,26 +1,90 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --colour-bg-primary: #1a1a1a;
+  --colour-bg-card: #262626;
+  --colour-border: #333333;
+  --colour-hover: #444444;
+  --colour-accent-purple: #d4a5d3;
+  --colour-accent-cyan: #7fb8c4;
+  --colour-text: #e6e6e6;
+  
+  --colour-pastel-lavender: #f0d9ef;
+  --colour-pastel-pink: #fcdce1;
+  --colour-pastel-yellow: #ffe6bb;
+  --colour-pastel-sage: #e9ecce;
+  --colour-pastel-mint: #cde9dc;
+  --colour-pastel-blue: #c4dfe5;
+  
+  --font-family-sans: var(--font-geist-sans);
+  --font-family-mono: var(--font-geist-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--colour-bg-primary);
+  color: #e6e6e6;
+}
+
+@utility gradient-text {
+  background: linear-gradient(to right, var(--colour-accent-purple), var(--colour-accent-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@utility gradient-purple-cyan {
+  background: linear-gradient(to right, var(--colour-accent-purple), var(--colour-accent-cyan));
+}
+
+@utility glow-purple {
+  text-shadow: 0 0 20px rgba(212, 165, 211, 0.5),
+               0 0 40px rgba(212, 165, 211, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@utility animate-fade-in {
+  animation: fadeIn 600ms ease-out forwards;
+}
+
+@utility animate-slide-up {
+  animation: slideUp 500ms ease-out forwards;
+}
+
+@utility animate-scale-in {
+  animation: scaleIn 600ms ease-out forwards;
+}
+
+@utility animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
 }

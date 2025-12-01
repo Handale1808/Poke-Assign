@@ -1,3 +1,5 @@
+//src/app/data/page.tsx
+
 import dbConnect from '@/lib/mongodb';
 import { Submission, Analysis, Pokemon, Synonym, Log } from '@/lib/models';
 

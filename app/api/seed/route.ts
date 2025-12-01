@@ -1,3 +1,5 @@
+//src/app/api/seed/route.ts
+
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 import { Submission, Analysis, Pokemon, Synonym, Log } from '@/lib/models';

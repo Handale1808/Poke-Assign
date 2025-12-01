@@ -1,3 +1,5 @@
+// src/app/api/test-db/route.ts
+
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/mongodb';
 
